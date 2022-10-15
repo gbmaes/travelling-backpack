@@ -4,14 +4,14 @@ html {
     font-family: 'Roboto', cursive;
 }
 
-.conteudo {
+.content {
     padding: 10vh 3em 0;
     display: flex;
     align-items: flex-start;
     gap: 2em;
 }
 
-.principal {
+.main {
     flex-grow: 1;
     flex-basis: auto;
     min-width: 600px;
@@ -23,7 +23,7 @@ html {
     gap: 2em;
 }
   
-.mochila {
+.backpack {
     min-width: 170px;
     max-width: 170px;
     height: 180px;
@@ -42,13 +42,13 @@ html {
     flex-grow: 1;
 }
   
-.mochila:before, .mochila:after {
+.backpack:before, .backpack:after {
     display: block;
     content: '';
     position: absolute;
   }
   
-.mochila:before {
+.backpack:before {
     height: 75px;
     width: 118px;
     background-image: radial-gradient(circle closest-corner at 13px 29px , #af342c, #af342c 2px, transparent 2px, transparent), radial-gradient(circle closest-corner at 13px 29px , #491033, #491033 4px, transparent 4px, transparent), linear-gradient(to bottom, transparent 10px, transparent 15px, #491033 5px, #491033 18px, transparent 18px, transparent 100px), linear-gradient(to right, #af342c 10px, #af342c 10px, transparent 10px, transparent 16px, #af342c 9px, #af342c 50px), linear-gradient(to bottom, #af342c 8px, #af342c 16px, #491033 8px, #491033 30px, #af342c 20px, #af342c 72px, #af342c 10px, #af342c 57px, #af342c 5%);
@@ -66,7 +66,7 @@ html {
     font-size: 14px;
 }
   
-.mochila:after {
+.backpack:after {
     margin-left: 67px;
     margin-top: -30px;
     background: #cca16a;
@@ -77,11 +77,11 @@ html {
     transform: rotate(45deg);
 }
 
-.adicionar {
+.add {
     width: 100%;
 }
 
-.adicionar input {
+.add input {
     width: 100%;
     box-sizing: border-box;
     margin: 0.5em 0 1em;
@@ -90,17 +90,17 @@ html {
     border: 2px solid #40112D;
 }
 
-.adicionar label {
+.add label {
     display: block;
 }
 
-.cadastrar {
+.register {
     background-color: #40112D;
     color: #FFFFFF;
     cursor: pointer;
 }
 
-.lista {
+.list {
     margin: 0;
     padding: 0;
 }
