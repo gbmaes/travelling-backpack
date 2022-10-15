@@ -8,7 +8,18 @@ form.addEventListener("submit", (event) => {
     const name = event.target.elements['name']
     const quantity = event.target.elements['quantity']
 
-    createElement(name.value, quantity.value)
+    const currentItem = {
+        "name": name.value,
+        "quantity": quantity.value
+    }
+
+    createElement(currentItem)
+
+    
+
+    itens.push(currentItem)
+
+    localStorage.setItem("item", JSON.stringify(itens))
 
     name.value = ""
     quantity.value = ""
@@ -16,24 +27,17 @@ form.addEventListener("submit", (event) => {
 })
 
 
-function createElement(name, quantity) {
+function createElement(item) {
     const newItem = document.createElement('li')
     newItem.classList.add("item")
 
     const numberItem = document.createElement('strong')
-    numberItem.innerHTML = quantity
+    numberItem.innerHTML = item.quantity
     newItem.appendChild(numberItem)
 
-    newItem.innerHTML += name
+    newItem.innerHTML += item.name
 
     list.appendChild(newItem)
 
-    const currentItem = {
-        "name": name,
-        "quantity": quantity
-    }
-
-    itens.push(currentItem)
-
-    localStorage.setItem("item", JSON.stringify(itens))
-};
+    
+}
