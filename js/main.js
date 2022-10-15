@@ -1,7 +1,14 @@
 const form = document.getElementById("newItem")
 const list = document.getElementById("list")
-const itens = []
+// Logic operator that returns saved data, or empty string, using localStorage.getItem, modifying the value of `string` with JSON.parse()
+const itens = JSON.parse(localStorage.getItem("itens")) || []
 
+// Use of forEach so that all items already written to the list are kept when you refresh the page 
+itens.forEach( (element) => {
+    createElement(element)
+})
+
+// Refactoring addEventListener to receive the extra functions of the createElement function
 form.addEventListener("submit", (event) => {
     event.preventDefault()
 
@@ -15,8 +22,6 @@ form.addEventListener("submit", (event) => {
 
     createElement(currentItem)
 
-    
-
     itens.push(currentItem)
 
     localStorage.setItem("item", JSON.stringify(itens))
@@ -26,7 +31,7 @@ form.addEventListener("submit", (event) => {
 
 })
 
-
+// Refactoring the `createElement` function so that it only has the function that makes sense to the name.
 function createElement(item) {
     const newItem = document.createElement('li')
     newItem.classList.add("item")
