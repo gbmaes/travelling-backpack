@@ -58,5 +58,5 @@ function createElement(item) {
 }
 
 function updateElement(item) {
-    document.querySelector("{data-id='"+item.id+"'}").innerHTML = item.quantity
+    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantity
 }
