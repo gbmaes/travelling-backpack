@@ -54,10 +54,30 @@ function createElement(item) {
 
     newItem.innerHTML += item.name
 
+    newItem.appendChild(deleteButton())
+
     list.appendChild(newItem)
+
+
 
 }
 
 function updateElement(item) {
     document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantity
+}
+
+// removing itens
+function deleteButton () {
+    const elementButton = document.createElement("button")
+    elementButton.innerText = "X"
+
+    elementButton.addEventListener("click", function () {
+        deleteElement(this.parentNode)
+    })
+
+    return elementButton
+}
+
+function deleteElement(tag) {
+    tag.remove()
 }
