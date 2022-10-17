@@ -26,9 +26,9 @@ form.addEventListener("submit", (event) => {
         currentItem.id = exists.id
         
         updateElement(currentItem)
-        itens[exists.id] = currentItem
+        itens[itens.findIndex(element => element.id === exists.id)] = currentItem
     } else {
-        currentItem.id = itens(itens.length - 1) ? (itens[itens.length - 1]).id + 1 : 0;
+        currentItem.id = itens[itens.length - 1] ? (itens[itens.length - 1]).id + 1 : 0;
 
         createElement(currentItem)
 
@@ -57,8 +57,6 @@ function createElement(item) {
     newItem.appendChild(deleteButton(item.id))
 
     list.appendChild(newItem)
-
-
 
 }
 
